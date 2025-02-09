@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+    'api',
     'rest_framework'
 ]
 
@@ -56,7 +56,10 @@ ROOT_URLCONF = 'myproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates',  # Esto debería estar correcto
+            BASE_DIR / 'api' / 'templates',  # Esto también debería ser correcto
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
